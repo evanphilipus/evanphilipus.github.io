@@ -693,7 +693,7 @@
         <a href="https://www.instagram.com/evanphilipus/" target="_blank" rel="noopener" class="socl" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/evanphilipus/" target="_blank" rel="noopener" class="socl" title="Facebook"><i class="fab fa-facebook-f"></i></a>
       </div>
-      <div class="text-muted" style="font-size:.78rem;">&copy; 2025 Evan Philipus. All rights reserved.</div>
+      <div class="text-muted" style="font-size:.78rem;">&copy; <span id="cpYear"></span> Evan Philipus. All rights reserved.</div>
     </div>
   </div>
 </footer>
@@ -832,6 +832,20 @@ function _rc(){
 }
 setTimeout(_rc,600);
 
+/* ── SMOOTH SCROLL (sembunyikan # dari URL) ── */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var id=this.getAttribute('href').slice(1);
+    var el=document.getElementById(id);
+    if(!el)return;
+    var offset=document.getElementById('mNav').offsetHeight||70;
+    var top=el.getBoundingClientRect().top+window.scrollY-offset;
+    window.scrollTo({top:top,behavior:'smooth'});
+    history.replaceState(null,'',window.location.pathname);
+  });
+});
+
 /* ── ACTIVE NAV ── */
 var _secs=document.querySelectorAll('section[id]'),_nls=document.querySelectorAll('.nav-link');
 window.addEventListener('scroll',function(){
@@ -844,6 +858,8 @@ window.addEventListener('scroll',function(){
     }
   });
 },{passive:true});
+
+document.getElementById('cpYear').textContent=new Date().getFullYear();
 
 /* ── CONTACT FORM ── */
 window._sm=function(){
