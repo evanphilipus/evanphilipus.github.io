@@ -1,535 +1,866 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<!-- <link rel="icon" href="icon.ico" type="image/x-icon">
-		<link rel="icon" href="icon.png" type="image/png"> -->
-		<link rel="icon" href="ep-logo.png" type="image/png">
-		
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Evan Philipus</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="" />
-		<meta name="author" content="" />
-		<meta name="keywords" content="" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Evan Philipus — IT Manager & IT Consultant with 10+ years experience in web development, ERP, network infrastructure, and IT strategy in Indonesia.">
+  <meta name="robots" content="index, follow">
+  <title>Evan Philipus · IT Manager & Consultant</title>
 
-		<!-- Facebook and Twitter integration -->
-		<meta property="og:title" content=""/>
-		<meta property="og:image" content=""/>
-		<meta property="og:site_name" content=""/>
-		<meta property="og:url" content=""/>
-		<meta property="og:description" content=""/>
-		<meta name="twitter:title" content="" />
-		<meta name="twitter:image" content="" />
-		<meta name="twitter:url" content="" />
-		<meta name="twitter:card" content="" />
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-		<link href="css/font-Quicksand.css" rel="stylesheet">
-		<link href="css/font-Playfair-Display.css" rel="stylesheet">
-		
-		<!-- Animate.css -->
-		<link rel="stylesheet" href="css/animate.css">
-		<!-- Icomoon Icon Fonts-->
-		<link rel="stylesheet" href="css/icomoon.css">
-		<!-- Bootstrap  -->
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<!-- Flexslider  -->
-		<link rel="stylesheet" href="css/flexslider.css">
-		<!-- Flaticons  -->
-		<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-		<!-- Owl Carousel -->
-		<link rel="stylesheet" href="css/owl.carousel.min.css">
-		<link rel="stylesheet" href="css/owl.theme.default.min.css">
-		<!-- Theme style  -->
-		<link rel="stylesheet" href="css/style.css">
+  <style>
+    :root{
+      --bg:#070c17;--bg2:#0d1525;--bg3:#111d30;
+      --gold:#c9a227;--gold2:#e8c04d;
+      --txt:#e8edf5;--txm:#7a8899;
+      --bdr:rgba(201,162,39,.2);
+    }
+    *{-webkit-user-select:none;-moz-user-select:none;user-select:none;}
+    .sel{-webkit-user-select:text;-moz-user-select:text;user-select:text;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--txt);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden;}
+    h1,h2,h3,.font-serif{font-family:'Cormorant Garamond',serif;}
+    ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--gold);}
 
-		<!-- Modernizr JS -->
-		<script src="js/modernizr-2.6.2.min.js"></script>
-		<!-- FOR IE9 below -->
-		<!--[if lt IE 9]>
-		<script src="js/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	
-	<body>
-		<div id="colorlib-page">
-			<div class="container-wrap">
-				<a class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-				<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-					<div class="text-center">
-						<div class="author-img" style="background-image: url(images/about.jpg);"></div>
-						<h1 id="colorlib-logo"><a href="https://linkedin.com/in/evan-philipus" target="_blank">Evan Philipus</a></h1>
-						<span class="position"><a href="https://evanphilipus.github.io">IT</a> in Indonesia</span>
-					</div>
-					<nav id="colorlib-main-menu" role="navigation" class="navbar">
-						<div id="navbar" class="collapse">
-							<ul>
-								<li class="active"><a href="#" data-nav-section="about">About</a></li>
-								<li><a href="#" data-nav-section="services">Services</a></li>
-								<li><a href="#" data-nav-section="skills">Skills</a></li>
-								<li><a href="#" data-nav-section="education">Education</a></li>
-								<li><a href="#" data-nav-section="experience">Experience</a></li>
-							</ul>
-						</div>
-					</nav>
+    /* ── CURSOR ── */
+    #cDot,#cRing{position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+    #cDot{width:8px;height:8px;background:var(--gold);border-radius:50%;transition:transform .1s;}
+    #cRing{width:36px;height:36px;border:1px solid rgba(201,162,39,.45);border-radius:50%;transition:all .15s ease;z-index:9998;}
+    body:hover #cDot{opacity:1;}
 
-					<div class="colorlib-footer">
-						<p>
-							<small>
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-								<br/>
-							</small>
-							<big>
-							<span>
-								<a class="icon-mail5" href="mailto:evan.philifus@gmail.com" target="_blank"></a>
-								&nbsp;
-								<a class="icon-github" href="https://github.com/evanphilipus" target="_blank"></a>
-								&nbsp;
-								<a class="icon-linkedin22" href="https://linkedin.com/in/evan-philipus" target="_blank"></a>
-								&nbsp;
-								<a class="icon-facebook22" href="https://www.facebook.com/evanphilipus/" target="_blank"></a>
-								&nbsp;
-								<a class="icon-instagram" href="https://www.instagram.com/evanphilipus/" target="_blank"></a>
-							</span>
-							</big>
-						</p>
-					</div>
-				</aside>
+    /* ── NAVBAR ── */
+    #mNav{background:transparent;padding:1.5rem 0;transition:all .4s ease;}
+    #mNav.scrolled{background:rgba(7,12,23,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:.9rem 0;border-bottom:1px solid var(--bdr);}
+    .nb{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;color:var(--txt)!important;letter-spacing:.05em;}
+    .nb span{color:var(--gold);}
+    .nav-link{font-size:.82rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--txm)!important;padding:.5rem 1rem!important;transition:color .3s;}
+    .nav-link:hover,.nav-link.active{color:var(--gold)!important;}
+    .btn-nm{border:1px solid var(--gold);color:var(--gold)!important;border-radius:0;padding:.5rem 1.3rem!important;transition:all .3s;}
+    .btn-nm:hover{background:var(--gold);color:var(--bg)!important;}
+    .navbar-toggler{border:none!important;box-shadow:none!important;}
+    .navbar-toggler-icon{filter:invert(1);}
 
-				<div id="colorlib-main">
-					<section class="colorlib-about" data-section="about">
-						<div class="colorlib-narrow-content">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-										<div class="col-md-12">
-											<div class="about-desc">
-												<span class="heading-meta">About Me</span>
-												<h2 class="colorlib-heading">Who Am I?</h2>
-												<p><strong>Hi, I'm Evan Philipus.</strong> I am passionate about Information Technology and I have experiences such as developing web application, desktop application and mobile application, developing ERP application, troubleshooting hardware and software.</p>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-											<div class="services color-1">
-												<span class="icon2"><i class="icon-world"></i></span>
-												<h3>Application</h3>
-											</div>
-										</div>
-										<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-											<div class="services color-2">
-												<span class="icon2"><i class="icon-data"></i></span>
-												<h3>Database</h3>
-											</div>
-										</div>
-										<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-											<div class="services color-3">
-												<span class="icon2"><i class="icon-server"></i></span>
-												<h3>Server</h3>
-											</div>
-										</div>
-										<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-											<div class="services color-4">
-												<span class="icon2"><i class="icon-windows"></i></span>
-												<h3>Service</h3>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					
-					<section class="colorlib-services" data-section="services">
-						<div class="colorlib-narrow-content">
-							<div class="row">
-								<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-									<span class="heading-meta">What I do?</span>
-									<h2 class="colorlib-heading">Here are some of my expertise</h2>
-								</div>
-							</div>
-							<div class="row row-pt-md">
-								<div class="col-md-4 text-center animate-box">
-									<div class="services color-5">
-										<span class="icon">
-											<i class="icon-wi-fi"></i>
-										</span>
-										<div class="desc">
-											<h3>Network</h3>
-											<p>LAN, Router, Hub & Switch </p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 text-center animate-box">
-									<div class="services color-2">
-										<span class="icon">
-											<i class="icon-data"></i>
-										</span>
-										<div class="desc">
-											<h3>Database</h3>
-											<p>SQL Server & MySQL</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 text-center animate-box">
-									<div class="services color-3">
-										<span class="icon">
-											<i class="icon-server"></i>
-										</span>
-										<div class="desc">
-											<h3>Server</h3>
-											<p>Windows Server & Linux</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 text-center animate-box">
-									<div class="services color-4">
-										<span class="icon">
-											<i class="icon-windows"></i>
-										</span>
-										<div class="desc">
-											<h3>Service</h3>
-											<p>Operating System and Software, Replace and Upgrade Hardware</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 text-center animate-box">
-									<div class="services color-1">
-										<span class="icon">
-											<i class="icon-world"></i>
-										</span>
-										<div class="desc">
-											<h3>Application</h3>
-											<p>ASP.NET, VB.NET, PHP Laravel, Flutter & Dynamics AX</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 text-center animate-box">
-									<div class="services color-6">
-										<span class="icon">
-											<i class="icon-bulb"></i>
-										</span>
-										<div class="desc">
-											<h3>Graphic Design</h3>
-											<p>CorelDraw & Photoshop</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
+    /* ── HERO ── */
+    #hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;}
+    .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 70% 45%,rgba(201,162,39,.07) 0%,transparent 70%),radial-gradient(ellipse 50% 45% at 15% 85%,rgba(30,60,120,.3) 0%,transparent 60%);}
+    .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.045) 1px,transparent 1px);background-size:64px 64px;animation:gp 22s linear infinite;}
+    @keyframes gp{0%{transform:translate(0,0);}100%{transform:translate(64px,64px);}}
+    .hc{position:relative;z-index:2;}
+    .hbadge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,162,39,.09);border:1px solid var(--bdr);border-radius:50px;padding:.4rem 1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem;}
+    .hbadge::before{content:'';width:7px;height:7px;background:var(--gold);border-radius:50%;animation:pulse 2.2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+    .hname{font-size:clamp(3.5rem,8vw,7.2rem);font-weight:700;line-height:.93;color:var(--txt);margin-bottom:.5rem;}
+    .hname .acc{color:var(--gold);font-style:italic;}
+    .hrole{font-family:'Outfit',sans-serif;font-size:clamp(.95rem,1.8vw,1.25rem);font-weight:400;color:var(--txm);letter-spacing:.05em;margin-bottom:1.5rem;}
+    .hdesc{max-width:530px;font-size:.98rem;color:var(--txm);line-height:1.85;margin-bottom:2.5rem;}
+    .btn-g{background:var(--gold);color:var(--bg);border:none;border-radius:0;padding:.9rem 2.5rem;font-weight:600;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;}
+    .btn-g:hover{background:var(--gold2);color:var(--bg);transform:translateY(-2px);}
+    .btn-o{background:transparent;color:var(--txt);border:1px solid rgba(232,237,245,.25);border-radius:0;padding:.9rem 2.5rem;font-weight:400;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;}
+    .btn-o:hover{border-color:var(--gold);color:var(--gold);}
+    .hstats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--bdr);flex-wrap:wrap;}
+    .snum{font-family:'Cormorant Garamond',serif;font-size:2.9rem;font-weight:700;color:var(--gold);line-height:1;}
+    .slbl{font-size:.75rem;color:var(--txm);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;}
 
-					<section class="colorlib-skills" data-section="skills">
-						<div class="colorlib-narrow-content">
-							<div class="row">
-								<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-									<span class="heading-meta">My Specialty</span>
-									<h2 class="colorlib-heading animate-box">My Skills</h2>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<p>I use ASP.NET, VB.NET, PHP Laravel, Flutter, Dynamics AX, SQL Server, and MySQL to developing applications</p>
-								</div>
-								<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-									<div class="progress-wrap">
-										<h3>ASP.NET</h3>
-										<div class="progress">
-											<div class="progress-bar color-1" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-												<span>80%</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-									<div class="progress-wrap">
-										<h3>PHP Laravel</h3>
-										<div class="progress">
-											<div class="progress-bar color-2" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-												<span>80%</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-									<div class="progress-wrap">
-										<h3>Dynamics AX</h3>
-										<div class="progress">
-											<div class="progress-bar color-3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-												<span>60%</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-									<div class="progress-wrap">
-										<h3>Flutter</h3>
-										<div class="progress">
-											<div class="progress-bar color-4" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-												<span>50%</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-									<div class="progress-wrap">
-										<h3>SQL Server/MySQL</h3>
-										<div class="progress">
-											<div class="progress-bar color-5" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-												<span>80%</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-									<div class="progress-wrap">
-										<h3>Support</h3>
-										<div class="progress">
-											<div class="progress-bar color-6" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-												<span>85%</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					</br>
-					</br>
-					</br>
-					</br>
+    /* ── SECTIONS ── */
+    section{padding:100px 0;}
+    .slabel{font-family:'Outfit',sans-serif;font-weight:500;font-size:.73rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+    .sdiv{width:56px;height:2px;background:var(--gold);margin-bottom:1.5rem;}
+    .stitle{font-size:clamp(2rem,4vw,3.4rem);line-height:1.1;color:var(--txt);}
+    .stitle em{color:var(--gold);font-style:italic;}
 
-					<section class="colorlib-education" data-section="education">
-						<div class="colorlib-narrow-content">
-							<div class="row">
-								<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-									<span class="heading-meta">Education</span>
-									<h2 class="colorlib-heading animate-box">Education</h2>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<div class="fancy-collapse-panel">
-										<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-											<div class="panel panel-default">
-												<div class="panel-heading" role="tab" id="headingOne">
-													<h4 class="panel-title">
-														<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Bachelor Degree of Computer Science - Buddhi Dharma University</a>
-													</h4>
-												</div>
-												<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-													<div class="panel-body">
-														<p><strong>2012 - 2016</strong></p>
-														<p>Activities and Societies : C++, C#, VB.NET, ASP.NET, Java, SQL Server, MySQL</p>
-													</div>
-												</div>
-											</div>
-											<div class="panel panel-default">
-												<div class="panel-heading" role="tab" id="headingTwo">
-													<h4 class="panel-title">
-														<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">High School of Multimedia - Bonavita High School
-														</a>
-													</h4>
-												</div>
-												<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-													<div class="panel-body">
-														<p><strong>2009 - 2012</strong></p>
-														<p>Activities and Societies : CorelDraw, Adobe After Effect, Adobe Dreamweaver, Adobe Flash, Adobe Photoshop, Adobe Premiere Pro, Movie Maker, Photography</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					</br>
-					</br>
-					</br>
+    /* ── ABOUT ── */
+    #about{background:var(--bg2);}
+    .atxt{font-size:1.02rem;line-height:1.92;color:var(--txm);}
+    .atxt strong{color:var(--txt);}
+    .aquote{border-left:3px solid var(--gold);padding-left:1.6rem;margin:2rem 0;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--txt);line-height:1.65;}
+    .atag{display:inline-block;border:1px solid var(--bdr);color:var(--txm);padding:.3rem .85rem;font-size:.8rem;margin:.25rem;border-radius:0;transition:all .3s;}
+    .atag:hover{border-color:var(--gold);color:var(--gold);}
 
-					<section class="colorlib-experience" data-section="experience">
-						<div class="colorlib-narrow-content">
-							<div class="row">
-								<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-									<span class="heading-meta">Experience</span>
-									<h2 class="colorlib-heading animate-box">Work Experience</h2>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="timeline-centered">
-										<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-											<div class="timeline-entry-inner">
-												<div class="timeline-icon color-1">
-													<i class="icon-pen2"></i>
-												</div>
-												<div class="timeline-label">
-													<h2><a>IT Assistant Manager - IT Deputy Head - IT Manager
-														<br/>PT Synthesis Karya Pratama</a>
-														<br/><span>Oct 2021 - Present</span></h2>
-													<p>
-														- Lead Information Technology Team.
-														<br/> - Budgeting
-														<br/> - Project ERP with Vendor
-														<br/> - Create and modify web application and report using ASP.NET Visual Studio 2008
-														<br/> - Create and modify desktop application and report using VB.NET Visual Studio 2008
-														<br/> - Create and modify database, table, query, & stored procedure using SQL Server
-														<br/> - Backup and restore database using SQL Server
-														<br/> - Publish web application using IIS
-														<br/> - Maintenance Server
-														<br/> - Maintain Network (Access Point, Switch, Router, & Modem)
-														<br/> - Troubleshooting (PC, Notebook, Printer, etc)
-													</p>
-												</div>
-											</div>
-										</article>
+    /* ── SERVICES ── */
+    #services{background:var(--bg);}
+    .svc-card{background:var(--bg2);border:1px solid transparent;padding:2.5rem;height:100%;transition:all .4s ease;position:relative;overflow:hidden;}
+    .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transition:transform .4s ease;}
+    .svc-card:hover{background:var(--bg3);border-color:var(--bdr);transform:translateY(-7px);box-shadow:0 20px 50px rgba(0,0,0,.4);}
+    .svc-card:hover::after{transform:scaleX(1);}
+    .svc-icon{width:56px;height:56px;background:rgba(201,162,39,.09);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.35rem;color:var(--gold);}
+    .svc-ttl{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:.9rem;color:var(--txt);}
+    .svc-dsc{font-size:.88rem;color:var(--txm);line-height:1.75;}
 
-										<article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-											<div class="timeline-entry-inner">
-												<div class="timeline-icon color-4">
-													<i class="icon-pen2"></i>
-												</div>
-												<div class="timeline-label">
-													<h2><a>Senior IT Officer - IT Supervisor
-														<br/>PT Paramount Enterprise International</a>
-														<br/><span>Jul 2019 - Oct 2021</span></h2>
-													<p>
-														- Lead Information Technology Team
-														<br/> - Create and modify mobile application using Flutter
-														<br/> - Create and modify web application and report using PHP Laravel
-														<br/> - Create and modify API using PHP Laravel
-														<br/> - Create and modify database, table, & query using MySQL
-														<br/> - Create and modify SOP
-														<br/> - Project CCTV, Network, Smart Alarm system, Smart Home system, RFID sensor, Fingerprint, Door Lock system, Dancing Fountain system, & Sound system with Vendor
-														<br/> - Maintain Smart Alarm system, Smart Home system, Dancing Fountain system, Sound system, Cable TV system, CCTV system, RFID system, Fingerprint & Door Lock system, Network (Access Point, Switch, Router, & Modem)
-														<br/> - Troubleshooting (PC, Notebook, Printer, etc)
-													</p>
-												</div>
-											</div>
-										</article>
+    /* ── TIMELINE ── */
+    #experience{background:var(--bg2);}
+    .tl{position:relative;padding-left:2rem;}
+    .tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),rgba(201,162,39,.05));}
+    .tli{position:relative;padding:0 0 3rem 2.5rem;}
+    .tli::before{content:'';position:absolute;left:-5px;top:7px;width:10px;height:10px;background:var(--gold);border-radius:50%;border:2px solid var(--bg2);box-shadow:0 0 10px var(--gold);}
+    .tpd{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
+    .trole{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--txt);line-height:1.2;}
+    .tco{font-size:.88rem;color:var(--txm);margin-bottom:1rem;}
+    .tdl{list-style:none;padding:0;margin:0;}
+    .tdl li{font-size:.86rem;color:var(--txm);padding:.28rem 0 .28rem 1.1rem;position:relative;line-height:1.6;}
+    .tdl li::before{content:'—';position:absolute;left:0;color:var(--gold);}
 
-										<article class="timeline-entry animate-box" data-animate-effect="fadeInBottom">
-											<div class="timeline-entry-inner">
-												<div class="timeline-icon color-5">
-													<i class="icon-pen2"></i>
-												</div>
-												<div class="timeline-label">
-													<h2><a>Technical Analyst - ERP Programmer
-														<br/>PT Siloam International Hospitals, Tbk</a>
-														<br/><span>Aug 2017 – Jun 2019</span></h2>
-													<p>
-														- Create and modify API using .NET Core
-														<br/> - Create and modify report using Report Builder 2016
-														<br/> - Create and modify Middleware using Visual Studio 2013
-														<br/> - Create and modify database, table, query, & stored procedure using SQL Server
-														<br/> - Backup and restore database using SQL Server
-														<br/> - Customization ERP Program (Microsoft Dynamic AX 2012 R3)
-														<br/> - Create and modify report ERP Program using Visual Studio 2016
-														<br/> - Maintenance Server
-														<br/> - Create and modify technical documentation customization ERP Program (Microsoft Dynamic AX 2012 R3)
-													</p>
-												</div>
-											</div>
-										</article>
+    /* ── SKILLS ── */
+    #skills{background:var(--bg);}
+    .ski{margin-bottom:1.75rem;}
+    .skh{display:flex;justify-content:space-between;margin-bottom:.5rem;}
+    .skn{font-size:.88rem;font-weight:500;color:var(--txt);}
+    .skp{font-size:.84rem;color:var(--gold);}
+    .skg{background:rgba(255,255,255,.06);height:3px;overflow:hidden;}
+    .skf{background:linear-gradient(90deg,var(--gold),var(--gold2));height:100%;width:0;transition:width 1.6s cubic-bezier(.17,.67,.35,1);}
+    .tbadge{display:inline-block;background:rgba(201,162,39,.07);border:1px solid var(--bdr);color:var(--txm);padding:.38rem .95rem;font-size:.8rem;margin:.25rem;transition:all .3s;}
+    .tbadge:hover{background:rgba(201,162,39,.15);color:var(--gold);border-color:var(--gold);}
 
-										<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-											<div class="timeline-entry-inner">
-												<div class="timeline-icon color-1">
-													<i class="icon-pen2"></i>
-												</div>
-												<div class="timeline-label">
-													<h2><a>MIS Staff
-														<br/>PT Lion Mentari Airlines</a>
-														<br/><span>Jun 2015 – Aug 2017</span></h2>
-													<p>
-														- Create and modify web application and report using ASP.NET Visual Studio 2010
-														<br/> - Create and modify database, table, query, & stored procedure using SQL Server
-														<br/> - Publish web application using IIS 7.0
-														<br/> - Photo editing using Adobe Photoshop CS5
-														<br/> - Create and modify web application documentation using Microsoft Word 2010, Microsoft Power Point 2010, & Microsoft Visio 2010
-													</p>
-												</div>
-											</div>
-										</article>
-										
-										<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-											<div class="timeline-entry-inner">
-												<div class="timeline-icon color-2">
-													<i class="icon-pen2"></i>
-												</div>
+    /* ── EDUCATION ── */
+    #education{background:var(--bg2);}
+    .edc{background:var(--bg);border:1px solid var(--bdr);padding:2rem;margin-bottom:1.4rem;transition:border-color .3s;}
+    .edc:hover{border-color:var(--gold);}
+    .eyr{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
+    .edg{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--txt);}
+    .esc{font-size:.88rem;color:var(--txm);}
 
-												<div class="timeline-label">
-													<h2><a>Designer
-														<br/>CV Trimitra Manunggal</a>
-														<br/><span>Sep 2012 – Jan 2015</span></h2>
-													<p>
-														- Create and modify design using CorelDraw X4
-														<br/> - Photo editing using Adobe Photoshop CS3
-														<br/> - Create and modify delivery order using Microsoft Excel 2010
-													</p>
-												</div>
-											</div>
-										</article>
-										
-										<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-											<div class="timeline-entry-inner">
-												<div class="timeline-icon color-3">
-													<i class="icon-pen2"></i>
-												</div>
-												<div class="timeline-label">
-													<!-- <h2><a href="https://evan-philipus.000webhostapp.com/EP Solusindo" target="_blank">Owner (Ecosoft Indonesia)</a> <span>Jun 2015 - Present</span></h2> -->                          
-													<h2>Owner
-														<br/>Ecosoft Indonesia
-														<br/><span>Jun 2015 - Present</span></h2>
-													<p>
-														- Create and modify web application and report using ASP.NET & PHP Laravel
-														<br/> - Create and modify desktop application and report using VB.NET
-														<br/> - Create and modify database, table, query, & stored procedure using SQL Server & MySQL
-														<br/> - Publish web application using IIS
-														<br/> - Backup and restore database using SQL Server & MySQL
-														<br/> - Create and modify Entity Relationship Diagram, Flowchart Diagram, Use Case Diagram, Activity Diagram, & Class Diagram
-														<br/> - Troubleshooting (PC, Notebook, Printer, etc)
-														<br/> - Installation Operating System & Software
-														<br/> - Photo editing using Adobe Photoshop
-													</p>
-												</div>
-											</div>
-										</article>
+    /* ── CONTACT ── */
+    #contact{background:var(--bg);}
+    .ccard{background:var(--bg2);border:1px solid var(--bdr);padding:1.7rem;margin-bottom:.85rem;display:flex;align-items:center;gap:1.25rem;text-decoration:none;color:var(--txt);transition:all .3s;}
+    .ccard:hover{border-color:var(--gold);background:var(--bg3);color:var(--txt);transform:translateX(6px);}
+    .cico{width:48px;height:48px;background:rgba(201,162,39,.09);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.15rem;flex-shrink:0;}
+    .clbl{font-size:.73rem;text-transform:uppercase;letter-spacing:.12em;color:var(--txm);}
+    .cval{font-size:.93rem;color:var(--txt);}
+    .fc{background:var(--bg2);border:1px solid rgba(255,255,255,.08);color:var(--txt);border-radius:0;padding:.85rem 1.2rem;font-size:.9rem;transition:border-color .3s;width:100%;}
+    .fc:focus{background:var(--bg2);border-color:var(--gold);color:var(--txt);box-shadow:none;outline:none;}
+    .fc::placeholder{color:var(--txm);}
+    textarea.fc{resize:vertical;}
 
-										<article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-											<div class="timeline-entry-inner">
-												<div class="timeline-icon color-none"></div>
-											</div>
-										</article>
-									</div>
-								</div>
-						   </div>
-						</div>
-					</section>
-				</div><!-- end:colorlib-main -->
-			</div><!-- end:container-wrap -->
-		</div><!-- end:colorlib-page -->
+    /* ── FOOTER ── */
+    footer{background:var(--bg2);border-top:1px solid var(--bdr);padding:2.5rem 0;}
+    .fb{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;}
+    .fb span{color:var(--gold);}
+    .socl{width:40px;height:40px;border:1px solid var(--bdr);display:inline-flex;align-items:center;justify-content:center;color:var(--txm);text-decoration:none;margin:0 .2rem;transition:all .3s;}
+    .socl:hover{border-color:var(--gold);color:var(--gold);}
 
-		<!-- jQuery -->
-		<script src="js/jquery.min.js"></script>
-		<!-- jQuery Easing -->
-		<script src="js/jquery.easing.1.3.js"></script>
-		<!-- Bootstrap -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- Waypoints -->
-		<script src="js/jquery.waypoints.min.js"></script>
-		<!-- Flexslider -->
-		<script src="js/jquery.flexslider-min.js"></script>
-		<!-- Owl carousel -->
-		<script src="js/owl.carousel.min.js"></script>
-		<!-- Counters -->
-		<script src="js/jquery.countTo.js"></script>		
-		
-		<!-- MAIN JS -->
-		<script src="js/main.js"></script>
-	</body>
+    /* ── FADE ANIMATIONS ── */
+    .fu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+    .fu.vis{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px){
+      section{padding:72px 0;}
+      .hstats{gap:1.5rem;}
+      .snum{font-size:2.1rem;}
+      .hname{font-size:clamp(3rem,12vw,5rem);}
+      #cDot,#cRing{display:none;}
+    }
+
+    /* Toast */
+    #toast{position:fixed;bottom:2rem;right:2rem;background:var(--gold);color:var(--bg);padding:.85rem 1.5rem;font-weight:600;font-size:.85rem;z-index:9999;display:none;border-radius:0;letter-spacing:.05em;}
+  </style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="cDot"></div>
+<div id="cRing"></div>
+
+<!-- Toast -->
+<div id="toast">✓ Message sent!</div>
+
+<!-- ─────────── NAVBAR ─────────── -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mNav">
+  <div class="container">
+    <a class="navbar-brand nb" href="#hero">Evan<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nvc" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nvc">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="nav-link btn-nm" href="#contact">Hire Me</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ─────────── HERO ─────────── -->
+<section id="hero">
+  <div class="hbg"></div>
+  <div class="hgrid"></div>
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- TEXT (kiri) -->
+      <div class="col-lg-7 hc">
+        <div class="hbadge">Available for Consulting</div>
+        <h1 class="hname">Evan<br><span class="acc">Philipus</span></h1>
+        <div class="hrole">IT Manager &nbsp;·&nbsp; IT Consultant &nbsp;·&nbsp; Full-Stack Developer</div>
+        <p class="hdesc">
+          10+ years driving digital transformation across real estate, healthcare, aviation, and property sectors.
+          I bridge strategy and execution — from enterprise ERP to network infrastructure and custom application development.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#contact" class="btn-g">Hire Me</a>
+          <a href="#experience" class="btn-o">View Experience</a>
+        </div>
+        <div class="hstats">
+          <div><div class="snum" data-t="10">0</div><div class="slbl">Years Exp.</div></div>
+          <div><div class="snum" data-t="6">0</div><div class="slbl">Companies</div></div>
+          <div><div class="snum" data-t="6">0</div><div class="slbl">Tech Stacks</div></div>
+          <div><div class="snum" data-t="100">0</div><div class="slbl">% Committed</div></div>
+        </div>
+      </div>
+
+      <!-- PHOTO (kanan desktop / atas mobile) -->
+      <div class="col-lg-5 col-12 hc order-lg-last order-first d-flex justify-content-center">
+        <div class="hphoto-wrap">
+          <div class="hphoto-ring hphoto-ring1"></div>
+          <div class="hphoto-ring hphoto-ring2"></div>
+          <div class="hphoto-inner">
+            <!-- ✏️ Ganti "foto-anda.jpg" dengan nama file foto Anda -->
+            <img src="foto-anda.jpg" alt="Evan Philipus" id="profileImg"
+                 onerror="this.style.display='none';document.getElementById('hPhotoPlaceholder').style.display='flex';">
+            <div id="hPhotoPlaceholder" class="hphoto-placeholder">
+              <i class="fa fa-user"></i>
+              <span>Foto Anda di sini<br><small>foto-anda.jpg</small></span>
+            </div>
+          </div>
+          <div class="hphoto-badge">
+            <i class="fa fa-briefcase"></i>&nbsp; IT Consultant
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* ── HERO PHOTO ── */
+.hphoto-wrap{
+  position:relative;width:340px;height:400px;flex-shrink:0;
+}
+.hphoto-inner{
+  position:relative;z-index:2;width:100%;height:100%;overflow:hidden;
+  background:var(--bg3);border:1px solid var(--bdr);
+  clip-path:polygon(0 0,88% 0,100% 12%,100% 100%,12% 100%,0 88%);
+}
+.hphoto-inner img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
+  transition:transform .5s ease;
+}
+.hphoto-wrap:hover .hphoto-inner img{transform:scale(1.04);}
+/* spinning gold rings */
+.hphoto-ring{
+  position:absolute;border:1px solid rgba(201,162,39,.3);z-index:1;
+  clip-path:polygon(0 0,88% 0,100% 12%,100% 100%,12% 100%,0 88%);
+}
+.hphoto-ring1{inset:-10px;animation:hrSpin 10s linear infinite;}
+.hphoto-ring2{inset:-20px;border-color:rgba(201,162,39,.12);animation:hrSpin 18s linear infinite reverse;}
+@keyframes hrSpin{0%{opacity:.4;}50%{opacity:1;}100%{opacity:.4;}}
+/* floating badge */
+.hphoto-badge{
+  position:absolute;bottom:-14px;left:-20px;z-index:4;
+  background:var(--gold);color:var(--bg);
+  font-family:'Outfit',sans-serif;font-weight:600;font-size:.78rem;
+  letter-spacing:.08em;padding:.55rem 1.2rem;
+  box-shadow:0 8px 24px rgba(201,162,39,.35);
+}
+/* placeholder */
+.hphoto-placeholder{
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;height:100%;gap:.85rem;color:var(--txm);font-size:.82rem;
+  border:2px dashed rgba(201,162,39,.25);text-align:center;
+}
+.hphoto-placeholder i{font-size:3.5rem;color:rgba(201,162,39,.2);}
+.hphoto-placeholder small{font-size:.72rem;color:rgba(201,162,39,.45);font-family:monospace;}
+/* mobile size */
+@media(max-width:991px){
+  .hphoto-wrap{width:200px;height:240px;}
+  .hphoto-badge{font-size:.7rem;padding:.45rem .9rem;bottom:-12px;left:-10px;}
+}
+</style>
+
+<!-- ─────────── ABOUT ─────────── -->
+<section id="about">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5 fu">
+        <div class="slabel">01 / About</div>
+        <div class="sdiv"></div>
+        <h2 class="stitle">Who I <em>Am</em></h2>
+      </div>
+      <div class="col-lg-7 fu d2">
+        <p class="atxt">
+          Hi, I'm <strong>Evan Philipus</strong> — an IT professional with over <strong>10 years</strong> of hands-on experience spanning software development, ERP implementation, IT infrastructure management, and technology consulting. I'm also the founder of <strong>ECOSOFT Indonesia</strong>, a software house delivering custom IT solutions.
+        </p>
+        <blockquote class="aquote">
+          "I don't just manage technology — I align it with your business goals to drive real, measurable outcomes."
+        </blockquote>
+        <p class="atxt">
+          My expertise covers <strong>full-stack web development</strong>, <strong>Enterprise Resource Planning systems</strong> (Microsoft Dynamics AX 2012 R3, IFCA & In-house Development), <strong>network &amp; server infrastructure</strong>, smart building systems, and <strong>IT team leadership</strong>. I've led IT operations across real estate, healthcare, aviation, and property development sectors.
+        </p>
+        <div class="mt-3">
+          <span class="atag">ASP.NET</span>
+          <span class="atag">PHP Laravel</span>
+          <span class="atag">Flutter</span>
+          <span class="atag">VB.NET</span>
+          <span class="atag">.NET Core</span>
+          <span class="atag">Dynamics AX</span>
+          <span class="atag">SQL Server</span>
+          <span class="atag">MySQL</span>
+          <span class="atag">Windows Server</span>
+          <span class="atag">Linux</span>
+          <span class="atag">IoT Systems</span>
+          <span class="atag">Network</span>
+          <span class="atag">IT Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── SERVICES ─────────── -->
+<section id="services">
+  <div class="container">
+    <div class="row mb-5 fu">
+      <div class="col-lg-6">
+        <div class="slabel">02 / Services</div>
+        <div class="sdiv"></div>
+        <h2 class="stitle">What I <em>Offer</em></h2>
+      </div>
+      <div class="col-lg-6 d-flex align-items-end">
+        <p class="text-muted" style="font-size:.93rem;">End-to-end IT solutions tailored to your business needs — from strategic consultation to full implementation.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 fu d1">
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa fa-network-wired"></i></div>
+          <div class="svc-ttl">IT Infrastructure & Network</div>
+          <p class="svc-dsc">Design, implementation, and maintenance of enterprise IT infrastructure — LAN/WAN, servers, access points, switches, routers, and server rooms for organizations of all sizes.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fu d2">
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa fa-code"></i></div>
+          <div class="svc-ttl">Web & App Development</div>
+          <p class="svc-dsc">Custom web applications using ASP.NET and PHP Laravel, mobile apps with Flutter, and desktop solutions with VB.NET — built to scale with your business requirements.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fu d3">
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa fa-cubes"></i></div>
+          <div class="svc-ttl">ERP Implementation</div>
+          <p class="svc-dsc">Expert customization, implementation, and support for Enterprise Resource Planning systems (Microsoft Dynamics AX 2012 R3, IFCA & In-house Development). From requirements gathering and development to go-live and post-implementation optimization.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fu d1">
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa fa-database"></i></div>
+          <div class="svc-ttl">Database Design & Admin</div>
+          <p class="svc-dsc">SQL Server and MySQL database architecture, query optimization, stored procedures, automated backup strategies, and performance tuning for mission-critical systems.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fu d2">
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa fa-chess-king"></i></div>
+          <div class="svc-ttl">IT Project Management</div>
+          <p class="svc-dsc">End-to-end IT project leadership: budgeting, vendor management, team coordination, and delivery of complex technology projects on time and within scope.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fu d3">
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa fa-headset"></i></div>
+          <div class="svc-ttl">IT Consulting & Support</div>
+          <p class="svc-dsc">Strategic IT consulting for SMEs and enterprises — technology roadmaps, system audits, hardware/software troubleshooting, and ongoing IT support retainers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── EXPERIENCE ─────────── -->
+<section id="experience">
+  <div class="container">
+    <div class="row mb-5 fu">
+      <div class="col-lg-6">
+        <div class="slabel">03 / Experience</div>
+        <div class="sdiv"></div>
+        <h2 class="stitle">Work <em>History</em></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 fu d1">
+        <div class="tl">
+
+          <div class="tli">
+            <div class="tpd">Oct 2021 — Present</div>
+            <div class="trole">IT Assistant Manager · IT Deputy Head · IT Manager</div>
+            <div class="tco"><i class="fa fa-building" style="color:var(--gold);margin-right:.4rem;font-size:.8rem;"></i>PT Synthesis Karya Pratama &nbsp;·&nbsp; Real Estate</div>
+            <ul class="tdl">
+			  <li>Lead the Information Technology team in managing application development, ERP systems, and IT infrastructure operations</li>
+			  <li>Plan and manage IT budgeting to support business operations and technology initiatives</li>
+			  <li>Develop and customize ERP systems to improve business processes and operational efficiency</li>
+			  <li>Develop and maintain web applications, APIs, and mobile applications to support internal systems</li>
+			  <li>Design and manage database architecture including stored procedures and performance optimization using SQL Server</li>
+			  <li>Manage server deployment, application publishing, and system maintenance using IIS</li>
+			  <li>Oversee network infrastructure including access points, switches, routers, and internet connectivity</li>
+			  <li>Ensure system stability, security, and performance across enterprise applications and IT infrastructure</li>
+			  <li>Provide technical troubleshooting and support for IT systems and hardware</li>
+            </ul>
+          </div>
+
+          <div class="tli">
+            <div class="tpd">Jul 2019 — Oct 2021</div>
+            <div class="trole">Senior IT Officer · IT Supervisor</div>
+            <div class="tco"><i class="fa fa-building" style="color:var(--gold);margin-right:.4rem;font-size:.8rem;"></i>PT Paramount Enterprise International &nbsp;·&nbsp; Property Development</div>
+            <ul class="tdl">
+			  <li>Lead the IT team in managing technology operations and system development</li>
+			  <li>Developed mobile applications using Flutter for internal business solutions</li>
+			  <li>Developed web applications and APIs using Laravel</li>
+			  <li>Designed and maintained MySQL databases for internal systems</li>
+			  <li>Developed IT SOP documentation and system procedures</li>
+			  <li>Managed vendor coordination for technology implementation projects</li>
+            </ul>
+          </div>
+
+          <div class="tli">
+            <div class="tpd">Aug 2017 — Jun 2019</div>
+            <div class="trole">Technical Analyst · ERP Programmer</div>
+            <div class="tco"><i class="fa fa-building" style="color:var(--gold);margin-right:.4rem;font-size:.8rem;"></i>PT Siloam International Hospitals, Tbk &nbsp;·&nbsp; Healthcare</div>
+            <ul class="tdl">
+			  <li>Customized ERP systems using Microsoft Dynamics AX 2012 R3</li>
+			  <li>Developed APIs using .NET Core for system integration</li>
+			  <li>Developed middleware applications for enterprise systems</li>
+			  <li>Created reports using Visual Studio and Report Builder</li>
+			  <li>Designed and managed SQL Server databases including stored procedures</li>
+			  <li>Performed database backup and restore operations</li>
+			  <li>Maintained servers and ERP system infrastructure</li>
+			  <li>Created technical documentation for ERP customization</li>
+            </ul>
+          </div>
+
+          <div class="tli">
+            <div class="tpd">Jun 2015 — Aug 2017</div>
+            <div class="trole">MIS Staff</div>
+            <div class="tco"><i class="fa fa-building" style="color:var(--gold);margin-right:.4rem;font-size:.8rem;"></i>PT Lion Mentari Airlines &nbsp;·&nbsp; Aviation</div>
+            <ul class="tdl">
+              <li>Developed and maintained web applications using ASP.NET (Visual Studio 2010)</li>
+              <li>Designed and maintained SQL Server databases including queries and stored procedures</li>
+              <li>Published web applications using IIS 7.0</li>
+              <li>Created system documentation using Microsoft Word, PowerPoint, and Visio</li>
+              <li>Performed graphic editing using Adobe Photoshop</li>
+            </ul>
+          </div>
+
+          <div class="tli">
+            <div class="tpd">Jun 2015 — Present</div>
+            <div class="trole">Owner &amp; IT Consultant</div>
+            <div class="tco"><i class="fa fa-rocket" style="color:var(--gold);margin-right:.4rem;font-size:.8rem;"></i>ECOSOFT Indonesia &nbsp;·&nbsp; Software House (Own Business)</div>
+            <ul class="tdl">
+              <li>Custom web and desktop application development (ASP.NET, PHP Laravel, VB.NET)</li>
+              <li>Database design, administration, and optimization (SQL Server &amp; MySQL)</li>
+              <li>System architecture: ERD, Flowchart, Use Case, Activity &amp; Class Diagrams</li>
+              <li>IT support: troubleshooting, OS installation, hardware &amp; software setup</li>
+            </ul>
+          </div>
+
+          <div class="tli">
+            <div class="tpd">Sep 2012 — Jan 2015</div>
+            <div class="trole">Graphic Designer</div>
+            <div class="tco"><i class="fa fa-building" style="color:var(--gold);margin-right:.4rem;font-size:.8rem;"></i>CV Trimitra Manunggal &nbsp;·&nbsp; Design Agency</div>
+            <ul class="tdl">
+			  <li>Create and modify design using CorelDraw X4</li>
+			  <li>Photo editing using Adobe Photoshop CS3</li>
+			  <li>Create and modify delivery order using Microsoft Excel 2010</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── SKILLS ─────────── -->
+<section id="skills">
+  <div class="container">
+    <div class="row mb-5 fu">
+      <div class="col">
+        <div class="slabel">04 / Skills</div>
+        <div class="sdiv"></div>
+        <h2 class="stitle">Technical <em>Expertise</em></h2>
+      </div>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-6 fu d1">
+        <div class="ski">
+          <div class="skh"><span class="skn">ASP.NET / VB.NET</span><span class="skp">80%</span></div>
+          <div class="skg"><div class="skf" data-w="80"></div></div>
+        </div>
+        <div class="ski">
+          <div class="skh"><span class="skn">PHP Laravel</span><span class="skp">80%</span></div>
+          <div class="skg"><div class="skf" data-w="80"></div></div>
+        </div>
+        <div class="ski">
+          <div class="skh"><span class="skn">SQL Server / MySQL</span><span class="skp">80%</span></div>
+          <div class="skg"><div class="skf" data-w="80"></div></div>
+        </div>
+        <div class="ski">
+          <div class="skh"><span class="skn">IT Support &amp; Troubleshooting</span><span class="skp">85%</span></div>
+          <div class="skg"><div class="skf" data-w="85"></div></div>
+        </div>
+        <div class="ski">
+          <div class="skh"><span class="skn">Microsoft Dynamics AX (ERP)</span><span class="skp">60%</span></div>
+          <div class="skg"><div class="skf" data-w="60"></div></div>
+        </div>
+        <div class="ski">
+          <div class="skh"><span class="skn">Flutter (Mobile)</span><span class="skp">50%</span></div>
+          <div class="skg"><div class="skf" data-w="50"></div></div>
+        </div>
+        <div class="ski">
+          <div class="skh"><span class="skn">Network Infrastructure</span><span class="skp">78%</span></div>
+          <div class="skg"><div class="skf" data-w="78"></div></div>
+        </div>
+        <div class="ski">
+          <div class="skh"><span class="skn">Server Administration</span><span class="skp">75%</span></div>
+          <div class="skg"><div class="skf" data-w="75"></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fu d2">
+        <div class="mb-4">
+          <div class="slabel mb-3">Application Development</div>
+          <div>
+            <span class="tbadge">ASP.NET</span><span class="tbadge">VB.NET</span><span class="tbadge">PHP Laravel</span>
+            <span class="tbadge">Flutter</span><span class="tbadge">.NET Core</span><span class="tbadge">Dynamics AX</span>
+            <span class="tbadge">REST API</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="slabel mb-3">Database & Server</div>
+          <div>
+            <span class="tbadge">SQL Server</span><span class="tbadge">MySQL</span><span class="tbadge">Windows Server</span>
+            <span class="tbadge">Linux</span><span class="tbadge">IIS</span><span class="tbadge">Report Builder</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="slabel mb-3">Network & IoT</div>
+          <div>
+            <span class="tbadge">LAN/WAN</span><span class="tbadge">Access Point</span><span class="tbadge">Switch/Router</span>
+            <span class="tbadge">CCTV</span><span class="tbadge">Smart Home</span><span class="tbadge">RFID</span>
+            <span class="tbadge">Fingerprint</span><span class="tbadge">Door Lock</span>
+          </div>
+        </div>
+        <div>
+          <div class="slabel mb-3">Design & Documentation</div>
+          <div>
+            <span class="tbadge">CorelDraw</span><span class="tbadge">Photoshop</span><span class="tbadge">MS Visio</span>
+            <span class="tbadge">ERD</span><span class="tbadge">UML</span><span class="tbadge">SOP Writing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── EDUCATION ─────────── -->
+<section id="education">
+  <div class="container">
+    <div class="row mb-5 fu">
+      <div class="col-lg-6">
+        <div class="slabel">05 / Education</div>
+        <div class="sdiv"></div>
+        <h2 class="stitle">Academic <em>Background</em></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="edc fu d1">
+          <div class="eyr">2012 — 2016</div>
+          <div class="edg">Bachelor Degree of Computer Science</div>
+          <div class="esc mb-3">Buddhi Dharma University, Indonesia</div>
+          <div>
+            <span class="tbadge" style="font-size:.76rem;">C++</span>
+            <span class="tbadge" style="font-size:.76rem;">C#</span>
+            <span class="tbadge" style="font-size:.76rem;">VB.NET</span>
+            <span class="tbadge" style="font-size:.76rem;">ASP.NET</span>
+            <span class="tbadge" style="font-size:.76rem;">Java</span>
+            <span class="tbadge" style="font-size:.76rem;">SQL Server</span>
+            <span class="tbadge" style="font-size:.76rem;">MySQL</span>
+          </div>
+        </div>
+        <div class="edc fu d2">
+          <div class="eyr">2009 — 2012</div>
+          <div class="edg">High School of Multimedia</div>
+          <div class="esc mb-3">Bonavita High School, Indonesia</div>
+          <div>
+            <span class="tbadge" style="font-size:.76rem;">CorelDraw</span>
+            <span class="tbadge" style="font-size:.76rem;">Adobe After Effect</span>
+            <span class="tbadge" style="font-size:.76rem;">Adobe Dreamweaver</span>
+            <span class="tbadge" style="font-size:.76rem;">Adobe Photoshop</span>
+            <span class="tbadge" style="font-size:.76rem;">Adobe Premiere</span>
+            <span class="tbadge" style="font-size:.76rem;">Photography</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── CONTACT ─────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="row mb-5 fu">
+      <div class="col-lg-6">
+        <div class="slabel">06 / Contact</div>
+        <div class="sdiv"></div>
+        <h2 class="stitle">Let's <em>Work Together</em></h2>
+        <p class="text-muted mt-3" style="font-size:.93rem;">Have a project or need IT consultation? I'm available for freelance &amp; consulting engagements across Indonesia and remotely.</p>
+      </div>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5 fu d1">
+        <a href="mailto:evan.philifus@gmail.com" class="ccard sel">
+          <div class="cico"><i class="fa fa-envelope"></i></div>
+          <div>
+            <div class="clbl">Email</div>
+            <div class="cval">evan.philifus@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/evan-philipus" target="_blank" rel="noopener" class="ccard">
+          <div class="cico"><i class="fab fa-linkedin-in"></i></div>
+          <div>
+            <div class="clbl">LinkedIn</div>
+            <div class="cval">linkedin.com/in/evan-philipus</div>
+          </div>
+        </a>
+        <a href="https://github.com/evanphilipus" target="_blank" rel="noopener" class="ccard">
+          <div class="cico"><i class="fab fa-github"></i></div>
+          <div>
+            <div class="clbl">GitHub</div>
+            <div class="cval">github.com/evanphilipus</div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/evanphilipus/" target="_blank" rel="noopener" class="ccard">
+          <div class="cico"><i class="fab fa-instagram"></i></div>
+          <div>
+            <div class="clbl">Instagram</div>
+            <div class="cval">@evanphilipus</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-7 fu d2">
+        <div class="mb-3">
+          <input type="text" id="cfN" class="fc" placeholder="Your Name">
+        </div>
+        <div class="mb-3">
+          <input type="email" id="cfE" class="fc" placeholder="Email Address">
+        </div>
+        <div class="mb-3">
+          <input type="text" id="cfS" class="fc" placeholder="Subject">
+        </div>
+        <div class="mb-3">
+          <textarea id="cfM" class="fc" rows="5" placeholder="Tell me about your project or inquiry..."></textarea>
+        </div>
+        <button onclick="_sm()" class="btn-g" style="cursor:pointer;border:none;">Send Message &nbsp;<i class="fa fa-arrow-right" style="font-size:.8rem;"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── FOOTER ─────────── -->
+<footer>
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <div>
+        <div class="fb">Evan<span>Philipus</span></div>
+        <div class="text-muted mt-1" style="font-size:.78rem;letter-spacing:.05em;">IT Manager &nbsp;·&nbsp; IT Consultant &nbsp;·&nbsp; Developer</div>
+      </div>
+      <div>
+        <a href="mailto:evan.philifus@gmail.com" class="socl" title="Email"><i class="fa fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/evan-philipus" target="_blank" rel="noopener" class="socl" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/evanphilipus" target="_blank" rel="noopener" class="socl" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/evanphilipus/" target="_blank" rel="noopener" class="socl" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/evanphilipus/" target="_blank" rel="noopener" class="socl" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <div class="text-muted" style="font-size:.78rem;">&copy; 2025 Evan Philipus. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─────────── WA FLOATING BUTTON ─────────── -->
+<div id="waWrap">
+  <div id="waTooltip">Hire me via WhatsApp</div>
+  <a id="waBtn" href="https://wa.me/6281281104020?text=Halo%20Evan%2C%20saya%20tertarik%20untuk%20menggunakan%20jasa%20IT%20consulting%20Anda.%20Boleh%20saya%20diskusikan%20lebih%20lanjut%20mengenai%20kebutuhan%20saya%3F" target="_blank" rel="noopener" aria-label="Hire me via WhatsApp">
+    <div id="waRing"></div>
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<style>
+  #waWrap{position:fixed;bottom:2rem;right:2rem;z-index:9990;display:flex;flex-direction:column;align-items:flex-end;gap:.55rem;}
+  #waBtn{
+    width:60px;height:60px;background:#25d366;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:1.75rem;text-decoration:none;
+    box-shadow:0 6px 24px rgba(37,211,102,.45);
+    position:relative;transition:transform .3s,box-shadow .3s;
+  }
+  #waBtn:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.6);color:#fff;}
+  /* pulse ring */
+  #waRing{
+    position:absolute;inset:-6px;border-radius:50%;
+    border:2px solid rgba(37,211,102,.5);
+    animation:waP 2.4s ease-out infinite;
+  }
+  @keyframes waP{
+    0%{transform:scale(1);opacity:.8;}
+    70%{transform:scale(1.55);opacity:0;}
+    100%{transform:scale(1.55);opacity:0;}
+  }
+  /* tooltip */
+  #waTooltip{
+    background:rgba(13,21,37,.95);border:1px solid rgba(37,211,102,.3);
+    color:#e8edf5;font-family:'Outfit',sans-serif;font-size:.8rem;
+    padding:.45rem 1rem;white-space:nowrap;
+    opacity:0;transform:translateX(10px);
+    transition:opacity .3s,transform .3s;
+    pointer-events:none;
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  }
+  #waWrap:hover #waTooltip{opacity:1;transform:translateX(0);}
+  /* label badge */
+  #waBtn::after{
+    content:'Hire Me';
+    position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%);
+    background:var(--gold);color:var(--bg);
+    font-family:'Outfit',sans-serif;font-weight:600;font-size:.7rem;letter-spacing:.08em;
+    padding:.28rem .75rem;white-space:nowrap;
+    opacity:0;transition:opacity .3s,right .3s;
+    pointer-events:none;
+  }
+  #waBtn:hover::after{opacity:1;right:calc(100% + 8px);}
+  @media(max-width:480px){
+    #waBtn{width:54px;height:54px;font-size:1.55rem;}
+    #waWrap{bottom:1.25rem;right:1.25rem;}
+  }
+</style>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(function(){
+"use strict";
+/* ── PROTECTION ── */
+var _p=function(e){e.preventDefault();return false;};
+document.addEventListener('contextmenu',_p);
+document.addEventListener('keydown',function(e){
+  var k=e.key.toLowerCase();
+  if(e.key==='F12')return _p(e);
+  if(e.ctrlKey&&['u','s','p'].includes(k))return _p(e);
+  if(e.ctrlKey&&e.shiftKey&&['i','j','c','k'].includes(k))return _p(e);
+});
+/* Detect devtools open via timing trick */
+var _dev=false;
+setInterval(function(){
+  var t=new Date();
+  debugger;
+  if(new Date()-t>100&&!_dev){
+    _dev=true;
+    document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#070c17;color:#c9a227;font-family:monospace;font-size:1.2rem;">Access Denied</div>';
+  }
+},3000);
+
+/* ── CURSOR ── */
+var _dot=document.getElementById('cDot'),_ring=document.getElementById('cRing');
+var mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
+if(window.innerWidth>768){
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;_dot.style.left=mx+'px';_dot.style.top=my+'px';});
+  (function _a(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;_ring.style.left=rx+'px';_ring.style.top=ry+'px';requestAnimationFrame(_a);})();
+}
+
+/* ── NAVBAR ── */
+var _nav=document.getElementById('mNav');
+window.addEventListener('scroll',function(){
+  _nav.classList[window.scrollY>50?'add':'remove']('scrolled');
+},{ passive:true });
+
+/* ── FADE UP ── */
+var _fus=document.querySelectorAll('.fu');
+function _cf(){_fus.forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight-60)el.classList.add('vis');});}
+window.addEventListener('scroll',_cf,{passive:true});
+_cf();
+
+/* ── SKILL BARS ── */
+var _bars=document.querySelectorAll('.skf'),_bDone=false;
+function _as(){
+  if(_bDone)return;
+  var s=document.getElementById('skills');
+  if(!s)return;
+  if(s.getBoundingClientRect().top<window.innerHeight){
+    _bDone=true;
+    _bars.forEach(function(b){setTimeout(function(){b.style.width=b.getAttribute('data-w')+'%';},200);});
+  }
+}
+window.addEventListener('scroll',_as,{passive:true});
+_as();
+
+/* ── COUNTERS ── */
+var _cnt=document.querySelectorAll('.snum[data-t]'),_cDone=false;
+function _rc(){
+  if(_cDone)return;
+  _cDone=true;
+  _cnt.forEach(function(el){
+    var tgt=parseInt(el.getAttribute('data-t')),cur=0,stp=Math.max(1,Math.ceil(tgt/40));
+    var tm=setInterval(function(){
+      cur=Math.min(cur+stp,tgt);
+      el.textContent=cur+(tgt>=100?'%':'+');
+      if(cur>=tgt)clearInterval(tm);
+    },38);
+  });
+}
+setTimeout(_rc,600);
+
+/* ── ACTIVE NAV ── */
+var _secs=document.querySelectorAll('section[id]'),_nls=document.querySelectorAll('.nav-link');
+window.addEventListener('scroll',function(){
+  var pos=window.scrollY+130;
+  _secs.forEach(function(s){
+    if(pos>=s.offsetTop&&pos<s.offsetTop+s.offsetHeight){
+      _nls.forEach(function(l){l.classList.remove('active');});
+      var a=document.querySelector('.nav-link[href="#'+s.id+'"]');
+      if(a)a.classList.add('active');
+    }
+  });
+},{passive:true});
+
+/* ── CONTACT FORM ── */
+window._sm=function(){
+  var n=document.getElementById('cfN').value.trim();
+  var e=document.getElementById('cfE').value.trim();
+  var s=document.getElementById('cfS').value.trim();
+  var m=document.getElementById('cfM').value.trim();
+  if(!n||!e||!m){alert('Please fill in Name, Email and Message.');return;}
+  var ml='mailto:evan.philifus@gmail.com?subject='+encodeURIComponent('[Website] '+(s||'Inquiry from '+n))+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+e+'\n\n'+m);
+  window.location.href=ml;
+  var t=document.getElementById('toast');
+  t.style.display='block';
+  setTimeout(function(){t.style.display='none';},3000);
+};
+
+})();
+</script>
+
+</body>
 </html>
-
